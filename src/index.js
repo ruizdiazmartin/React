@@ -1,1 +1,1 @@
-//un cambio de prueba.
+//cambio gitignore
