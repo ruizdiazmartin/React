@@ -1,30 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './App.css'
+import tasks from './sample/tasks.json'
+import Tasks from './components/tasks'
 
-function Helloworld() {
-	return (
-		<div id="hello">Hello world</div>
-	)
 
-}
+class App extends Component {
 
-//Llamar a un componente a traves de una funcion tradicional.
-function App() {
-	return (
-		<div>This is my component: <Helloworld /></div>
-	)
-}
-//Llamar a un componente mediante una clase que extiende de React
-/*class App extends React.Component {
-	render() {
-		return <div>This is my component: <Helloworld /></div>;
-
+	state = {
+		tasks: tasks
 	}
-}*/
 
-//Llamar a un componente a traves de una funcion flecha.
-//const App = () => <div>This is my component: <Helloworld /></div>
-
-
+	render() {
+		return (
+			<div>
+				<Tasks tasks={this.state.tasks} />
+			</div>
+		)
+	}
+}
 
 export default App
